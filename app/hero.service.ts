@@ -13,5 +13,9 @@ export class HeroService {
 		// Use Promise to make it asynchronized
 		return Promise.resolve(HEROES);
 	}
+	
+	getHero(id: number): Promise<Hero> {
+		return this.getHeroes().then( heroes => heroes.find(hero => hero.id === id ) );
+	}
 
 }
