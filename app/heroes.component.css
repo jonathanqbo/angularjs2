@@ -41,3 +41,16 @@
 	margin-right: .8em;
 	border-radius: 4px 0 0 4px;
 }
+
+.delete {
+	float:right;
+	margin-top: 2px;
+	margin-right: .8em;
+	background-color: #bbb;
+	border-radius: 4px;
+	color: white;
+}
+
+button.delete:hover {
+	background-color: red;
+}
