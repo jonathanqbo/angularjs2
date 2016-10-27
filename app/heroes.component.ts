@@ -9,18 +9,8 @@ import { HeroService } from './hero.service';
   moduleId: module.id,
   // while using Router, don't need this selector actually.
   selector: 'my-heroes',
-  template: `<h1>{{title}}</h1>
-	  		 <h2>My Heroes</h2>
-	  		 <ul class="heroes">
-	  		 	<li *ngFor = "let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-	  		 		<span class="badge">{{hero.id}}</span> {{hero.name}}
-	  		 	</li>
-	  		 </ul>
-	  		 <div *ngIf="selectedHero">
-	  		 	<h2>{{selectedHero.name | uppercase}} is my hero</h2>
-	  		 	<button (click)="gotoDetail()">View Detail</button>
-	  		 </div>
-			`
+  templateUrl: 'heroes.component.html',
+  styleUrls: [ 'heroes.component.css' ]
 })
 
 export class HeroesComponent implements OnInit {
