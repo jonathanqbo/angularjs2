@@ -42,7 +42,7 @@
 	border-radius: 4px 0 0 4px;
 }
 
-.delete {
+.heroes .delete {
 	float:right;
 	margin-top: 2px;
 	margin-right: .8em;
@@ -51,6 +51,6 @@
 	color: white;
 }
 
-button.delete:hover {
+.heroes .delete:hover {
 	background-color: red;
 }

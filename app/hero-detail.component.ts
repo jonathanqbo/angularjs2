@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -15,6 +15,9 @@ import { HeroService } from './hero.service';
 export class HeroDetailComponent implements OnInit{
 	@Input()
 	hero: Hero;
+
+	@Output()
+	onSave = new EventEmitter<Hero>();
 	
 	constructor(
 		private heroService: HeroService,
@@ -35,5 +38,6 @@ export class HeroDetailComponent implements OnInit{
 	
 	save(): void {
 		this.heroService.update(this.hero).then(() => this.goBack());
+		this.onSave.emit(this.hero);
 	}
 }
