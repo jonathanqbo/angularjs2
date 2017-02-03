@@ -1,0 +1,19 @@
+<h3>Child Router</h3>
+<nav>
+    <a routerLink="/contact/link1">Link 1</a>
+    <a routerLink="/contact/link2">Link 2</a>
+    <a routerLink="/contact/link3">Link 3</a>
+</nav>
+<router-outlet></router-outlet>
+
+<h3 highlight> {{contact.name}} </h3>
+<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" [(ngModel)]="contact.name" id="name1" name="name1" #name1="ngModel" required />
+        <div class="alert alert-danger" [hidden]="name1.valid">Name is required</div>
+    </div>
+    <button type="submit" class="btn btn-default" [disabled]="!contactForm.form.valid">Save</button>
+    <button type="button" class="btn btn-default" (click)="next()" [disabled]="!contactForm.form.valid">Next</button>
+    <button type="button" class="btn btn-default" (click)="newContact()">New Contact</button>
+</form>

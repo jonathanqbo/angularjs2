@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroesComponent } from './heroes.component';
-import { DashboardComponent } from './dashboard.component';
-import { KeyupDemoComponent } from './demo-keyup.component';
-import { HeroFormComponent } from './hero-form.component';
-import { DashboardComponent2 } from './dashboard2.component';
+import { HeroDetailComponent } from './heroes/list/hero-detail.component';
+import { HeroesComponent } from './heroes/list/heroes.component';
+import { DashboardComponent } from './heroes/dashboard/dashboard.component';
+import { KeyupDemoComponent } from './input/demo-keyup.component';
+import { HeroFormComponent } from './form/hero-form.component';
+import { DashboardComponent2 } from './modal-dashboard/dashboard2.component';
+import {HeroesListComponent} from "./heroes/listedit/heroes-list.component";
 
 const routes: Routes = [
   		{
@@ -23,6 +24,10 @@ const routes: Routes = [
 			path: 'dashboard',
 			component: DashboardComponent
 		},
+        {
+            path: 'editheroes',
+            component: HeroesListComponent
+        },
 		{
 			path: 'detail/:id',
 			component: HeroDetailComponent
@@ -38,6 +43,10 @@ const routes: Routes = [
         {
             path: 'model-form',
             component: DashboardComponent2
+        },
+        {
+            path: 'feature',
+            loadChildren: 'app/feature1/contact.module#ContactModule'
         }
 
 	];
